@@ -1,4 +1,4 @@
-if (command === ''user-info') {
+if (command === 'user-info') {
                       let inline = true
                       let resence = true
                       const status = {
