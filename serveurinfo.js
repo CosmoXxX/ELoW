@@ -1,0 +1,15 @@
+const embed = new Discord.RichEmbed()
+                  .setAuthor(message.guild.name, servIcon)
+                  .addField("Nom", message.guild.name, true)
+                  .addField("ID", message.guild.id, true)
+                  .addField("Propriétaire", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
+                  .addField("Région", region[message.guild.region], true)
+                  .addField("Total | Humains | Bots", `${message.guild.members.size} | ${message.guild.members.filter(member => !member.user.bot).size} | ${message.guild.members.filter(member => member.user.bot).size}`, true)
+                  .addField("Niveau de vérification", verifLevels[message.guild.verificationLevel], true)
+                  .addField("Salons", message.guild.channels.size, true)
+                  .addField("Rôles", message.guild.roles.size, true)
+                  .addField("Date de création", `${message.channel.guild.createdAt.toUTCString().substr(0, 16)} (${checkDays(message.channel.guild.createdAt)})`, true)
+                  .setColor('00FFFF')
+                  .setThumbnail(servIcon)
+              message.channel.send(embed);
+            }
